@@ -13,9 +13,9 @@ import java.util.*;
 @RequestMapping("music")
 public class MusicController {
     private final List<Music> music = new ArrayList<>(){{
-        add(new Music("1", "fdfsfs", "Мукка",Collections.singletonList("rock"), "dffd"));
-        add(new Music("2", "На твиче", "нексюша",Collections.singletonList("rock"), "dffd"));
-        add(new Music("3", "Психопат", "Midix",Collections.singletonList("rock"), "dffd"));
+        add(new Music("1", "Песя 1", "Артист 1",Collections.singletonList("rock"), "dffd"));
+        add(new Music("2", "Песня 2", "Артист 2",Collections.singletonList("rock"), "dffd"));
+        add(new Music("3", "Песня 3", "Артист 3",Collections.singletonList("rock"), "dffd"));
     }};
 
     @GetMapping
