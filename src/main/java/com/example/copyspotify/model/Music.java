@@ -2,18 +2,19 @@ package com.example.copyspotify.model;
 
 import java.util.List;
 
+
 public class Music {
     private String id;
 
     private String nameMusic;
 
-    private String artist;
+    private List<String> artist;
 
     private List<String> tags;
 
     private String pathFiles;
 
-    public Music(String id, String nameMusic, String artist, List<String> tags, String pathFiles) {
+    public Music(String id, String nameMusic, List<String> artist, List<String> tags, String pathFiles) {
         this.id = id;
         this.nameMusic = nameMusic;
         this.artist = artist;
@@ -29,19 +30,19 @@ public class Music {
         this.id = id;
     }
 
-    public String getName(String name) {
-        return this.nameMusic;
+    public String getName() {
+        return nameMusic;
     }
 
     public void setName(String name) {
         this.nameMusic = name;
     }
 
-    public String getArtist() {
+    public List<String> getArtist() {
         return artist;
     }
 
-    public void setArtist(String artist) {
+    public void setArtist(List<String> artist) {
         this.artist = artist;
     }
 
