@@ -15,6 +15,12 @@ public class MusicController {
         add(new Music("1", "Песя 1", Collections.singletonList("Артист 1"),Collections.singletonList("rock"), "dffd"));
         add(new Music("2", "Песня 2", Collections.singletonList("Артист 1"),Collections.singletonList("rock"), "dffd"));
         add(new Music("3", "Песня 3", Collections.singletonList("Артист 3"),Collections.singletonList("rock"), "dffd"));
+        add(new Music("4", "Таблетка", Collections.singletonList("Мукка"),Collections.singletonList("rock"), "dffd"));
+        add(new Music("5", "Fake Love", Collections.singletonList("KVSTR"),Collections.singletonList("rock"), "dffd"));
+        add(new Music("6", "Минутная слабость", Collections.singletonList("ТЕППО"),Collections.singletonList("rock"), "dffd"));
+        add(new Music("7", "Вселенная", Collections.singletonList("Мукка"),Collections.singletonList("rock"), "dffd"));
+        add(new Music("8", "Ненавижу порядок", Collections.singletonList("Sqwore"),Collections.singletonList("rock"), "dffd"));
+        add(new Music("9", "Kilua", Collections.singletonList("zxCursed"),Collections.singletonList("rock"), "dffd"));
     }};
 
     @GetMapping
@@ -30,7 +36,7 @@ public class MusicController {
     {
         List<Music> resultMusicByName = new ArrayList<Music>();
         for (Music value : this.music) {
-            if (value.getName().equals(name))
+            if (LevDiv.levenshteinDistance(value.getName(),name)<=2)
                 resultMusicByName.add(value);
         }
         if(resultMusicByName.isEmpty())
