@@ -1,5 +1,6 @@
 package com.example.copyspotify.model;
 
+//объект пользователь
 public class User {
     private String id;
 

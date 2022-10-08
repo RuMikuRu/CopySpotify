@@ -2,7 +2,7 @@ package com.example.copyspotify.model;
 
 import java.util.List;
 
-
+//объект музыка
 public class Music {
     private String id;
 

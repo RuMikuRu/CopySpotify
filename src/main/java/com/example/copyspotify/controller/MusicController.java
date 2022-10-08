@@ -23,6 +23,8 @@ public class MusicController {
         add(new Music("9", "Kilua", Collections.singletonList("zxCursed"),Collections.singletonList("rock"), "dffd"));
     }};
 
+
+    //выводит список всей музыки на сервере
     @GetMapping
     public List<Music> listMusic()
     {
@@ -31,6 +33,7 @@ public class MusicController {
         return newMusic;
     }
 
+    //поиск по имени
     @GetMapping("searchByName/{name}")
     public List<Music> getMusicByName(@PathVariable String name)
     {
@@ -46,6 +49,7 @@ public class MusicController {
         return resultMusicByName;
     }
 
+    //поиск по id
     @GetMapping("searchById/{id}")
     public List<Music> getMusicById(@PathVariable String id)
     {
@@ -59,6 +63,7 @@ public class MusicController {
         return null;
     }
 
+    //поиск по артистам
     @GetMapping("searchByArtist/{artist}")
     public List<Music> getMusicByArtist(@PathVariable String artist)
     {

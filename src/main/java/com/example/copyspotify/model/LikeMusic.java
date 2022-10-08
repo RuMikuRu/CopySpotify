@@ -3,6 +3,7 @@ package com.example.copyspotify.model;
 import java.util.HashMap;
 import java.util.List;
 
+//объект понравившиеся песен
 public class LikeMusic {
     private HashMap<String, Music> likeMusic;
 

@@ -22,12 +22,14 @@ public class LikeMusicController {
 
     private final LikeMusic likeMusic = new LikeMusic(idLikeMusic);
 
+    //выводит понравившиеся треки
     @GetMapping
     public LikeMusic getLikeMusicListId()
     {
         return likeMusic;
     }
 
+    //добавляет трек в раздел понравилось
     @PostMapping
     public LikeMusic addLikeMusic(@RequestBody Music newLikeMusicId){
         this.counter++;

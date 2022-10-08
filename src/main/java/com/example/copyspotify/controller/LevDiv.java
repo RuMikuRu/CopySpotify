@@ -1,5 +1,6 @@
 package com.example.copyspotify.controller;
 
+//алгоритм для поиска
 public class LevDiv {
     public static int levDiv(int i, int j, String s1, String s2, int[][] matrix)
     {
