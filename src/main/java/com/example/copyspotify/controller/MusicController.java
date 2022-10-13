@@ -1,26 +1,22 @@
 package com.example.copyspotify.controller;
 
 import com.example.copyspotify.model.Music;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
-
 @RestController
 @RequestMapping("music")
 public class MusicController {
     private final List<Music> music = new ArrayList<>(){{
-        add(new Music("1", "Песя 1", Collections.singletonList("Артист 1"),Collections.singletonList("rock"), "dffd"));
-        add(new Music("2", "Песня 2", Collections.singletonList("Артист 1"),Collections.singletonList("rock"), "dffd"));
-        add(new Music("3", "Песня 3", Collections.singletonList("Артист 3"),Collections.singletonList("rock"), "dffd"));
-        add(new Music("4", "Таблетка", Collections.singletonList("Мукка"),Collections.singletonList("rock"), "dffd"));
-        add(new Music("5", "Fake Love", Collections.singletonList("KVSTR"),Collections.singletonList("rock"), "dffd"));
-        add(new Music("6", "Минутная слабость", Collections.singletonList("ТЕППО"),Collections.singletonList("rock"), "dffd"));
-        add(new Music("7", "Вселенная", Collections.singletonList("Мукка"),Collections.singletonList("rock"), "dffd"));
-        add(new Music("8", "Ненавижу порядок", Collections.singletonList("Sqwore"),Collections.singletonList("rock"), "dffd"));
-        add(new Music("9", "Kilua", Collections.singletonList("zxCursed"),Collections.singletonList("rock"), "dffd"));
+        add(new Music("1", "Песя 1", "Артист 1","rock", "dffd"));
+        add(new Music("2", "Песня 2", "Артист 1","rock", "dffd"));
+        add(new Music("3", "Песня 3", "Артист 3","rock", "dffd"));
+        add(new Music("4", "Таблетка", "Мукка","rock", "dffd"));
+        add(new Music("5", "Fake Love", "KVSTR","rock", "dffd"));
+        add(new Music("6", "Минутная слабость", "ТЕППО","rock", "dffd"));
+        add(new Music("7", "Вселенная", "Мукка","rock", "dffd"));
+        add(new Music("8", "Ненавижу порядок", "Sqwore","rock", "dffd"));
+        add(new Music("9", "Kilua", "zxCursed","rock", "dffd"));
     }};
 
 
@@ -64,6 +60,7 @@ public class MusicController {
     }
 
     //поиск по артистам
+    /*
     @GetMapping("searchByArtist/{artist}")
     public List<Music> getMusicByArtist(@PathVariable String artist)
     {
@@ -82,6 +79,6 @@ public class MusicController {
         else
             return resultMusicByArtist;
     }
-
+*/
 
 }

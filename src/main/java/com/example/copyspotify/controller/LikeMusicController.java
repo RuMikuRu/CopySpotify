@@ -16,8 +16,8 @@ public class LikeMusicController {
 
     private final HashMap<String, Music> idLikeMusic = new HashMap<>()
     {{
-        put("1", new Music("1", "Артист 1", Collections.singletonList("Певец 1"),
-                Collections.singletonList("rock"), "pfpdpf"));
+        put("1", new Music("1", "Артист 1", "Певец 1",
+               "rock", "pfpdpf"));
     }};
 
     private final LikeMusic likeMusic = new LikeMusic(idLikeMusic);

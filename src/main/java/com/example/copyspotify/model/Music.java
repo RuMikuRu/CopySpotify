@@ -8,13 +8,13 @@ public class Music {
 
     private String nameMusic;
 
-    private List<String> artist;
+    private String artist;
 
-    private List<String> tags;
+    private String tags;
 
     private String pathFiles;
 
-    public Music(String id, String nameMusic, List<String> artist, List<String> tags, String pathFiles) {
+    public Music(String id, String nameMusic, String artist, String tags, String pathFiles) {
         this.id = id;
         this.nameMusic = nameMusic;
         this.artist = artist;
@@ -38,19 +38,19 @@ public class Music {
         this.nameMusic = name;
     }
 
-    public List<String> getArtist() {
+    public String getArtist() {
         return artist;
     }
 
-    public void setArtist(List<String> artist) {
+    public void setArtist(String artist) {
         this.artist = artist;
     }
 
-    public List<String> getTags() {
+    public String getTags() {
         return tags;
     }
 
-    public void setTags(List<String> tags) {
+    public void setTags(String tags) {
         this.tags = tags;
     }
 
