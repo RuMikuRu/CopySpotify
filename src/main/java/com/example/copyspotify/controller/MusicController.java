@@ -1,50 +1,31 @@
 package com.example.copyspotify.controller;
 
+import com.example.copyspotify.dto.MusicDTO;
 import com.example.copyspotify.model.Music;
+import com.example.copyspotify.repository.MusicRepository;
+import com.example.copyspotify.service.MusicService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
 @RestController
 @RequestMapping("music")
 public class MusicController {
-    private final List<Music> music = new ArrayList<>(){{
-        add(new Music("1", "Песя 1", "Артист 1","rock", "dffd"));
-        add(new Music("2", "Песня 2", "Артист 1","rock", "dffd"));
-        add(new Music("3", "Песня 3", "Артист 3","rock", "dffd"));
-        add(new Music("4", "Таблетка", "Мукка","rock", "dffd"));
-        add(new Music("5", "Fake Love", "KVSTR","rock", "dffd"));
-        add(new Music("6", "Минутная слабость", "ТЕППО","rock", "dffd"));
-        add(new Music("7", "Вселенная", "Мукка","rock", "dffd"));
-        add(new Music("8", "Ненавижу порядок", "Sqwore","rock", "dffd"));
-        add(new Music("9", "Kilua", "zxCursed","rock", "dffd"));
-    }};
-
+    private MusicService musicService;
 
     //выводит список всей музыки на сервере
     @GetMapping
-    public List<Music> listMusic()
+    public @ResponseBody ResponseEntity<List<MusicDTO>> listMusic()
     {
-        List<Music> newMusic = new ArrayList<Music>();
-        newMusic = this.music;
-        return newMusic;
+        return ResponseEntity.ok(musicService.fetchAllProduct());
     }
-
     //поиск по имени
     @GetMapping("searchByName/{name}")
-    public List<Music> getMusicByName(@PathVariable String name)
+    public ResponseEntity<List<MusicDTO>> getMusicByName(@PathVariable String name)
     {
-        List<Music> resultMusicByName = new ArrayList<Music>();
-        for (Music value : this.music) {
-            if (LevDiv.levenshteinDistance(value.getName(),name)<=2)
-                resultMusicByName.add(value);
-        }
-        if(resultMusicByName.isEmpty())
-        {
-            return null;
-        }
-        return resultMusicByName;
+        return ResponseEntity.ok(musicService.searchMusic(name));
     }
-
+/*
     //поиск по id
     @GetMapping("searchById/{id}")
     public List<Music> getMusicById(@PathVariable String id)

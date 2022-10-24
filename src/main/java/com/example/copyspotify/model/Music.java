@@ -1,20 +1,31 @@
 package com.example.copyspotify.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.List;
 
 //объект музыка
+@Entity
+@Table(name = "mymusic")
 public class Music {
-    private String id;
+    @Id
+    private int id;
 
+    @Column(name = "nameMusic")
     private String nameMusic;
 
+    @Column(name = "artist")
     private String artist;
 
+    @Column(name = "tags")
     private String tags;
 
+    @Column(name = "pathFiles")
     private String pathFiles;
 
-    public Music(String id, String nameMusic, String artist, String tags, String pathFiles) {
+    public Music(int id, String nameMusic, String artist, String tags, String pathFiles) {
         this.id = id;
         this.nameMusic = nameMusic;
         this.artist = artist;
@@ -22,11 +33,15 @@ public class Music {
         this.pathFiles = pathFiles;
     }
 
-    public String getId() {
+    public Music() {
+
+    }
+
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
